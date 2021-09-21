@@ -1,0 +1,17 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+}
+
+.input {
+	padding: 0.55em;
+	outline: none;
+	border: none;
+	border-radius: 30px;
+	min-width: 25%;
+	background-color: rgba(255, 255, 255, 0.8);
+	font-weight: 600;
+	font-size: 1.3em;
+}

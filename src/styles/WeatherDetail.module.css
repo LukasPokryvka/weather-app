@@ -1,0 +1,17 @@
+.wrapper {
+	perspective: 800px;
+	-webkit-perspective: 800px;
+	position: relative;
+	z-index: 2;
+}
+
+.wrapper__tilted {
+	height: 400px;
+	width: 300px;
+	transform-style: flat;
+	-webkit-transform-style: flat;
+	transform: rotateY(15deg);
+	-webkit-transform: rotateY(15deg);
+	background-color: slateblue;
+	border-radius: 20px;
+}
