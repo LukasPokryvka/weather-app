@@ -2,7 +2,16 @@ import React, { useState, useEffect } from 'react'
 import styles from '../../styles/WeatherDetail.module.css'
 import { Days, getToday } from '../../utils/days'
 import { CityResult, CurrentWeather } from '../../types/searchResult'
-import { IoLocationOutline } from 'react-icons/io5'
+import {
+	IoLocationOutline,
+	IoThunderstormOutline,
+	IoRainyOutline,
+	IoSunnyOutline,
+	IoCloudOutline
+} from 'react-icons/io5'
+import { RiDrizzleLine } from 'react-icons/ri'
+import { BiCloudSnow } from 'react-icons/bi'
+import { MdDehaze } from 'react-icons/md'
 
 interface WeatherDetailProps {
 	location: CityResult
@@ -13,7 +22,6 @@ const WeatherDetail: React.FC<WeatherDetailProps> = ({
 	location,
 	currentWeather
 }) => {
-	const [weatherName, setWeatherName] = useState('')
 	const [logo, setLogo] = useState(0)
 
 	useEffect(() => {
@@ -41,13 +49,31 @@ const WeatherDetail: React.FC<WeatherDetailProps> = ({
 		'Other'
 	]
 	const setWeatherAndLogo = () => {
-		setWeatherName(currentWeather.main)
 		const index = weatherOptions.indexOf(currentWeather.main)
 		index >= 0 ? setLogo(index) : setLogo(weatherOptions.indexOf('Other'))
 	}
 
 	const classList = (...classes: Array<string | boolean>) =>
 		classes.filter((item) => !!item).join(' ')
+
+	const getWeatherLogo = () => {
+		switch (logo) {
+			case 0:
+				return <IoThunderstormOutline />
+			case 1:
+				return <RiDrizzleLine />
+			case 2:
+				return <IoRainyOutline />
+			case 3:
+				return <BiCloudSnow />
+			case 4:
+				return <IoSunnyOutline />
+			case 5:
+				return <IoCloudOutline />
+			default:
+				return <MdDehaze />
+		}
+	}
 
 	return (
 		<div className={styles.wrapper}>
@@ -78,8 +104,9 @@ const WeatherDetail: React.FC<WeatherDetailProps> = ({
 								</div>
 							</div>
 							<div>
+								{getWeatherLogo()}
 								<h1>{temperature}°C</h1>
-								<h4>{currentWeather.description}</h4>
+								<p>{currentWeather.description}</p>
 							</div>
 						</div>
 					</div>

@@ -89,3 +89,8 @@
 .sections h1 {
 	font-size: 3rem;
 }
+
+.sections div:nth-child(2) svg {
+	height: 3.5rem;
+	width: 3.5rem;
+}
