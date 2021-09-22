@@ -16,7 +16,7 @@ export default {
 			main: {
 				temp: null
 			},
-			weather: [{ description: '' }]
+			weather: [{ description: '', main: '' }]
 		}
 	],
 	message: null

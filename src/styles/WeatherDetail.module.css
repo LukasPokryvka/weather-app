@@ -15,3 +15,77 @@
 	background-color: slateblue;
 	border-radius: 20px;
 }
+
+.common {
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+	text-transform: capitalize;
+}
+
+.background_common {
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.other {
+	background-image: url('../assets/other.jpg');
+}
+
+.thunderstorm {
+	background-image: url('../assets/thunderstorm.jpg');
+}
+
+.drizzle {
+	background-image: url('../assets/drizzle.jpg');
+}
+
+.rain {
+	background-image: url('../assets/rain.jpg');
+}
+
+.snow {
+	background-image: url('../assets/snow.jpg');
+}
+
+.clouds {
+	background-image: url('../assets/clouds.jpg');
+}
+
+.clear {
+	background-image: url('../assets/sunny.jpg');
+}
+
+.gradient {
+	background: rgba(119, 111, 254, 0.8);
+	background: linear-gradient(
+		20deg,
+		rgba(50, 47, 122, 0.8) 0%,
+		rgba(133, 91, 231, 0.8) 30%,
+		rgba(124, 240, 255, 0.8) 100%
+	);
+}
+
+.basic_styles {
+	padding: 2rem;
+}
+
+.location {
+	display: flex;
+	align-items: center;
+}
+
+.location p {
+	line-height: 3;
+}
+
+.sections {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.sections h1 {
+	font-size: 3rem;
+}

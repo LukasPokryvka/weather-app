@@ -28,9 +28,11 @@ export type ListResultsMain = {
 
 export type ListResultsWeather = {
 	description: string
+	main: string
 }
 
 export type CurrentWeather = {
 	temperature: number | null
 	description: string
+	main: string
 }

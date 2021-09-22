@@ -10,10 +10,14 @@ const App = () => {
 	const [searchResult, setSearchResult] = useState(initialState)
 
 	const handleWeatherSearch = async (city: string): Promise<void> => {
-		const result = await weather(
-			`forecast?q=${city}&appid=${api.key}&units=metric`
-		)
-		setSearchResult(result.data)
+		try {
+			const result = await weather(
+				`forecast?q=${city}&appid=${api.key}&units=metric`
+			)
+			setSearchResult(result.data)
+		} catch (e) {
+			console.log(e)
+		}
 	}
 
 	return (

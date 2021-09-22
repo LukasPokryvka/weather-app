@@ -12,7 +12,8 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
 	const location = data.city
 	const currentWeather: CurrentWeather = {
 		temperature: data.list[0].main.temp,
-		description: data.list[0].weather[0].description
+		description: data.list[0].weather[0].description,
+		main: data.list[0].weather[0].main
 	}
 
 	return (
